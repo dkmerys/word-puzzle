@@ -1,13 +1,16 @@
 $(document).ready(function() {
 
-  $("button").click(function(event) {
-    var sentece = $("#sentence").val();
-
+  $("#wordpuzzle").submit(function(event) {
+    var sentence = $("#sentence").val();
+    
     var vowels = ["a", "e", "i", "o", "u"];
-    for (var index = 0; sentence.includes(vowels); sentence.replace ([vowels], "-")) {
-      return 
+    var index = 0
+
+    for (index = 0; index < 5; index ++) {
+      sentence = sentence.replace(vowels[index], "-");
+      alert(sentence)
     }
-    $("#puzzle").show()
+
     event.preventDefault();
   });
 });
